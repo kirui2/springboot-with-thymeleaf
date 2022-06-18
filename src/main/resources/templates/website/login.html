@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head">
+</head>
+
+<body>
+<!--<nav th:replace="fragments/header :: nav">-->
+<!--</nav>-->
+<div class="container" style="margin-right: 1000px">
+    <div class="row">
+        <div class="card col-6 mx-auto" style="width: 576px; height: 892px; margin-top: 120px; border-radius:24px; border:solid 0.1px #C6C6C6;
+
+        background-color: #fff; margin: 82px 63px 0 0; padding: 42px 77px 84px 45px;">
+
+            <div class="card-body">
+                <div>
+                    <span class="Welcome-to">Welcome to</span>
+                </div>
+
+                <div class="Swipe-img" style="margin-bottom: 40.2px">
+                    <img src="../images/sw.png" style="width: 189.2px;height: 61px">
+                </div>
+
+                <div>
+                    <span style="width: 101px;height: 43px;margin: 76.2px 150px 11px 1px;object-fit: contain;font-family: Poppins;
+                    font-size: 30px;font-weight: 500;">Sign In
+                    </span>
+                </div>
+
+                <div style="margin-bottom: 11px">
+                    <span style="width: 262px;height: 28px;margin: 11px 191px 43px 1px;font-family: Poppins;
+                font-size: 20px;font-weight: normal;">Please Sign in to Continue</span>
+                </div>
+
+
+
+                <p th:if="${loginError}"  class="alert alert-danger" role="alert">Incorrect Username or password</p>
+                <form th:action="@{/perform-login}" method="post">
+
+                    <div class="form-group" style="margin-top: 10px;">
+
+                        <label th:for="email" style="width: 98px;height: 27px;margin: 0 355px 10px 0;font-family: Poppins;
+                        font-size: 19px;text-align: left;color: #8c98a9;margin-top: 43px">Username</label>
+
+
+                        <input style="border: solid 1px #c6c6c6;background-color: #fff;width: 453px;height: 67px;margin: 10px 0 0;border-radius: 5px;" type="text" class="form-control" th:id="email" name="email" th:name="email" aria-describedby="emailHelp" placeholder="Enter Username">
+                    </div>
+
+                    <div class="form-group">
+                        <label style="width: 98px;height: 27px;margin: 0 355px 10px 0;font-family: Poppins;
+                        font-size: 19px;text-align: left;color: #8c98a9;" th:for="password">Password</label>
+                        <input style="border: solid 1px #c6c6c6;background-color: #fff;width: 453px;height: 67px;margin: 10px 0 0;border-radius: 5px;" type="password" class="form-control" name="password" th:name="password" th:id="password" placeholder="*********">
+                    </div>
+                    <a style="width: 98px;height: 27px;margin: 0 35px 10px 0;font-family: Poppins;
+                        font-size: 19px;text-align: left;color: #8c98a9;">Forgot Password?</a>
+
+<!--                    <a th:href="/@{/forgot_password}" style="width: 98px;height: 27px;margin: 0 35px 10px 0;font-family: Poppins;-->
+<!--                        font-size: 19px;text-align: left;color: #8c98a9;">Forgot Password?</a>-->
+                    <!--<input type="checkbox" name="remember-me" />-->
+
+                    <button style=" width: 453px;height: 67px;margin: 25px 0 23px 1px;padding: 21px 199px 18px 195px;border-radius: 5px;background-color: #e6292c;"
+                    type="submit" class="btn btn-primary">LOGIN</button>
+                </form>
+
+                <span style="margin-top: 90px;width: 318px;height: 28px;font-family: Poppins;font-size: 20px;
+                font-weight: normal;font-stretch: normal;letter-spacing: normal;text-align: left;color: #8c98a9;">
+                Don't have an account?
+                <a style="color: #d50606;" href="/register">Sign Up</a>
+                </span>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<footer th:replace="fragments/footer :: footer"></footer>-->
+
+
+<div th:replace="fragments/jsScripts :: scripts"></div>
+
+
+</body>
+</html>
